@@ -2,11 +2,6 @@ const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
     const { message } = JSON.parse(event.body);
-
-    // Настройки для запроса к OpenAI API
-    const apiUrl = 'https://api.openai.com/v1/chat/completions';
-    const apiKey = process.env.OPENAI_API_KEY;  // Ключ будет храниться в Netlify
-
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
